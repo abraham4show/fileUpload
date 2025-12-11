@@ -99,7 +99,7 @@ const UploadPage = () => {
 
     try {
       setStatus("⏳ Uploading... Please wait.");
-      const res = await axios.post("http://localhost:5000/api/upload", formData, {
+      const res = await axios.post("https://fileuploadbackend-513d.onrender.com/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         timeout: 120000, // 2 minute timeout for large videos
       });

@@ -14,7 +14,7 @@ const GalleryPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/upload")
+    axios.get("https://fileuploadbackend-513d.onrender.com/api/upload")
       .then(res => setUploads(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -22,7 +22,7 @@ const GalleryPage = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this file?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/upload/${id}`);
+      await axios.delete(`https://fileuploadbackend-513d.onrender.com/api/upload/${id}`);
       setUploads(uploads.filter(u => u._id !== id));
     } catch (err) {
       console.error(err);
